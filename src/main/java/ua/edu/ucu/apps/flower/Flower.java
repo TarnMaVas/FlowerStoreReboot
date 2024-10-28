@@ -7,14 +7,14 @@ import lombok.Setter;
 @Setter @Getter @NoArgsConstructor
 public class Flower extends FlowerInfo {
 
-    protected double price;
+    private double price;
 
     public Flower(Flower flower) {
         this.price = flower.price;
         this.setSepalLength(flower.getSepalLength());
         this.setColor(FlowerColor.getColor(flower.getColor()));
         this.setType(flower.getType());
-        this.description = "a flower";
+        this.setDescription("a flower");
     }
 
     public Flower(double price, double sepalLength,
@@ -23,6 +23,6 @@ public class Flower extends FlowerInfo {
         this.setSepalLength(sepalLength);
         this.setColor(color);
         this.setType(type);
-        this.description = "a flower";
+        this.setDescription("a flower");
     }
 }

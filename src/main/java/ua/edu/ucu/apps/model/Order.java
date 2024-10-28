@@ -8,9 +8,9 @@ import ua.edu.ucu.apps.model.payment.Payment;
 
 public class Order {
 
-    LinkedList<Item> items;
-    Payment payment;
-    Delivery delivery;
+    private LinkedList<Item> items;
+    private Payment payment;
+    private Delivery delivery;
 
     public void addItem(Item item) {
         items.add(item);
@@ -28,12 +28,12 @@ public class Order {
         return totalPrice;
     }
 
-    public void setPaymentStrategy(Payment payment) {
-        this.payment = payment;
+    public void setPaymentStrategy(Payment newPayment) {
+        this.payment = newPayment;
     }
 
-    public void setDeliveryStrategy(Delivery delivery) {
-        this.delivery = delivery;
+    public void setDeliveryStrategy(Delivery newDelivery) {
+        this.delivery = newDelivery;
     }
 
     public void processOrder() {

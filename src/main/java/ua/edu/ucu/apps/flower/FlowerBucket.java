@@ -7,14 +7,9 @@ public class FlowerBucket extends Item {
 
     private final List<FlowerPack> flowerPacks;
 
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
     public FlowerBucket() {
         this.flowerPacks = new ArrayList<>();
-        this.description = "Flower bucket";
+        this.setDescription("Flower bucket");
 
     }
 
@@ -22,8 +17,8 @@ public class FlowerBucket extends Item {
         flowerPacks.add(flowerPack);
     }
 
-    public void addFlowers(List<FlowerPack> flowerPacks) {
-        this.flowerPacks.addAll(flowerPacks);
+    public void addFlowers(List<FlowerPack> newFlowerPacks) {
+        this.flowerPacks.addAll(newFlowerPacks);
     }
 
     @Override

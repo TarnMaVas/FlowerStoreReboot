@@ -47,6 +47,6 @@ public class DeliveryTest {
                                     delStratPost.deliver(items));
 
         Assertions.assertEquals("No items to deliver",
-                                    delStratDHL.deliver(items));                                   
+                                    delStratDHL.deliver(items));
     }
 }

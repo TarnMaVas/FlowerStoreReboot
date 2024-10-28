@@ -12,12 +12,13 @@ import ua.edu.ucu.apps.model.payment.Payment;
 
 public class PaymentTest {
     
+    public static final int BAD_PRICE = -5;
     @Test
     public void testNormal() {
-        Item item1 = new CactusFlower();
-        Item item2 = new RomashkaFlower();
+        Item itemA = new CactusFlower();
+        Item itemB = new RomashkaFlower();
 
-        double price = item1.getPrice() + item2.getPrice();
+        double price = itemA.getPrice() + itemB.getPrice();
 
         Payment payStratPal = new PayPalPaymentStrategy();
         Payment payStratCard = new CreditCardPaymentStrategy();
@@ -33,15 +34,14 @@ public class PaymentTest {
 
     @Test
     public void testEmpty() {
-        double price = -5;
 
         Payment payStratPal = new PayPalPaymentStrategy();
         Payment payStratCard = new CreditCardPaymentStrategy();
 
         Assertions.assertEquals("Payment error",
-                                    payStratPal.pay(price));
+                                    payStratPal.pay(BAD_PRICE));
         Assertions.assertEquals("Payment error",
-                                    payStratCard.pay(price));
+                                    payStratCard.pay(BAD_PRICE));
     }
 }
 

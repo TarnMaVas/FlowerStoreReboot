@@ -3,18 +3,21 @@ package ua.edu.ucu.apps.flower.decorators;
 import ua.edu.ucu.apps.flower.Item;
 
 public class BasketDecorator extends ItemDecorator {
+    public static final int BASKET_INCREMENT = 4;
+
     public BasketDecorator(Item item) {
-        this.item = item;
+        this.setItem(item);
+        this.setIncrement(BASKET_INCREMENT);
     }
 
     @Override
     public double getPrice() {
-        return item.getPrice() + 4;
+        return getItem().getPrice() + getIncrement();
     }
 
     @Override
     public String getDescription() {
-        return item.getDescription() + " with basket";
+        return getItem().getDescription() + " with basket";
     }
     
 }

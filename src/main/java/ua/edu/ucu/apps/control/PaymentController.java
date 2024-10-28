@@ -3,16 +3,18 @@ package ua.edu.ucu.apps.control;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.Getter;
+import lombok.Setter;
 import ua.edu.ucu.apps.flower.CactusFlower;
 import ua.edu.ucu.apps.flower.Item;
 import ua.edu.ucu.apps.flower.RomashkaFlower;
 import ua.edu.ucu.apps.model.payment.CreditCardPaymentStrategy;
 import ua.edu.ucu.apps.model.payment.Payment;
 
-@RestController
+@RestController @Getter @Setter
 public class PaymentController {
 
-    Payment paymentStrat;
+    private Payment paymentStrat;
 
     public PaymentController() {
         this.paymentStrat = new CreditCardPaymentStrategy();
@@ -20,10 +22,10 @@ public class PaymentController {
 
     @GetMapping("/payment")
     public String getDelivery() {
-        Item item1 = new CactusFlower();
-        Item item2 = new RomashkaFlower();
+        Item itemA = new CactusFlower();
+        Item itemB = new RomashkaFlower();
 
-        double price = item1.getPrice() + item2.getPrice();
+        double price = itemA.getPrice() + itemB.getPrice();
         return paymentStrat.pay(price) + '\n' + "Payment completed";
     }
 

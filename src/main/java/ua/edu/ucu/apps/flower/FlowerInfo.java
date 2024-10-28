@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter @NoArgsConstructor @AllArgsConstructor
-public abstract class FlowerInfo extends Item{
+public abstract class FlowerInfo extends Item {
 
     @Getter
     private double sepalLength;
@@ -20,7 +20,7 @@ public abstract class FlowerInfo extends Item{
         this.sepalLength = flowerInfo.getSepalLength();
         this.color = flowerInfo.color;
         this.type = flowerInfo.getType();
-        this.description = "a flower";
+        this.setDescription("a flower");
     }
 
     public String getColor() {

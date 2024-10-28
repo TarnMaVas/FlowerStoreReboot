@@ -1,11 +1,12 @@
 package ua.edu.ucu.apps.flower;
 
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
+@Getter @Setter
 public abstract class Item {
 
-    protected String description;
+    private String description;
 
     public abstract double getPrice();
 

@@ -11,14 +11,18 @@ import ua.edu.ucu.apps.flower.decorators.RibbonDecorator;
 
 public class DecoratorTest {
 
+    public static final int RIBBON_INCREMENT = 40;
+    public static final int BASKET_INCREMENT = 4;
+    public static final int PAPER_INCREMENT = 13;
+
     @Test
     public void testPrice() {
 
         Item cactus = new CactusFlower();
 
-        double expPaper = cactus.getPrice() + 13;
-        double expBasket = cactus.getPrice() + 4;
-        double expRibbon = cactus.getPrice() + 40;
+        double expPaper = cactus.getPrice() + PAPER_INCREMENT;
+        double expBasket = cactus.getPrice() + BASKET_INCREMENT;
+        double expRibbon = cactus.getPrice() + RIBBON_INCREMENT;
 
         Item paperCactus = new PaperDecorator(cactus);
         Item basketCactus = new BasketDecorator(cactus);

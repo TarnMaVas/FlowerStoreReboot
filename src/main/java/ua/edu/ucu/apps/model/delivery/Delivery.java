@@ -6,5 +6,5 @@ import ua.edu.ucu.apps.flower.Item;
 
 public interface Delivery {
     
-    public String deliver(List<Item> items);
+    String deliver(List<Item> items);
 }
