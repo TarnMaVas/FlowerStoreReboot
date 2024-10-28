@@ -19,6 +19,7 @@ public class FlowerController {
     
     private static final double PRICE_BOUND = 100;
     private static final double LENGTH_BOUND = 50;
+    private static final int NUM_FLOWERS = 3;
 
     // @Autowired
     // private FlowerService flowerService;
@@ -28,7 +29,7 @@ public class FlowerController {
 
         List<Flower> flowers = new ArrayList<>();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < NUM_FLOWERS; i++) {
             flowers.add(createRandomFlower());
         }
 
