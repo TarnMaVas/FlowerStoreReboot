@@ -1,3 +1,5 @@
+package ua.edu.ucu.apps.demo;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,20 +24,17 @@ public class DeliveryTest {
         Delivery delStratPost = new PostDeliveryStrategy();
         Delivery delStratDHL = new DHLDeliveryStrategy();
 
-        String expectedPost = """
-                Delivered 2 items using post. Their descriptions:
-                a Cactus flower
-                a Romashka flower
-                """;
-        String expectedDHL = """
-                Delivered 2 items using DHL. Their descriptions:
-                a Cactus flower
-                a Romashka flower
-                """;
+        String expectedPost = "Delivered 2 items using post."
+                              +  " Their descriptions:\n"
+                              + "a Cactus flower\n"
+                              + "a Romashka flower\n";
 
-        Assertions.assertEquals(expectedPost,
-                delStratPost.deliver(items));
-        Assertions.assertEquals(expectedDHL,
-                delStratDHL.deliver(items));
+        String expectedDHL = "Delivered 2 items using DHL."
+                             + " Their descriptions:\n"
+                             + "a Cactus flower\n"
+                             + "a Romashka flower\n";
+
+        Assertions.assertEquals(expectedPost, delStratPost.deliver(items));
+        Assertions.assertEquals(expectedDHL, delStratDHL.deliver(items));
     }
 }

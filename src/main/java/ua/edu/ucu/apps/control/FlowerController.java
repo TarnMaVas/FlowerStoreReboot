@@ -25,21 +25,20 @@ public class FlowerController {
 
     @GetMapping
     public List<Flower> listFlowers() {
-        Random rand = new Random();
 
         List<Flower> flowers = new ArrayList<>();
 
-        flowers.add(new Flower(rand.nextDouble(PRICE_BOUND),
-                    rand.nextDouble(LENGTH_BOUND),
-                    FlowerColor.RED, FlowerType.TULIP));
-        flowers.add(new Flower(rand.nextDouble(PRICE_BOUND),
-                    rand.nextDouble(LENGTH_BOUND),
-                    FlowerColor.RED, FlowerType.TULIP));
-        flowers.add(new Flower(rand.nextDouble(PRICE_BOUND),
-                    rand.nextDouble(LENGTH_BOUND),
-                    FlowerColor.RED, FlowerType.TULIP));
+        for (int i = 0; i < 3; i++) {
+            flowers.add(createRandomFlower());
+        }
 
         return flowers;
     }
 
+    private Flower createRandomFlower() {
+        Random rand = new Random();
+        return new Flower(rand.nextDouble(PRICE_BOUND),
+                          rand.nextDouble(LENGTH_BOUND),
+                          FlowerColor.RED, FlowerType.TULIP);
+    }
 }
