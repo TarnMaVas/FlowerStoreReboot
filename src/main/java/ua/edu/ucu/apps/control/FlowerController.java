@@ -17,8 +17,8 @@ import ua.edu.ucu.apps.flower.FlowerType;
 @RequestMapping("/flowers")
 public class FlowerController {
     
-    private static final double priceBound = 100;
-    private static final double lengthBound = 50;
+    private static final double PRICE_BOUND = 100;
+    private static final double LENGTH_BOUND = 50;
 
     // @Autowired
     // private FlowerService flowerService;
@@ -29,14 +29,14 @@ public class FlowerController {
 
         List<Flower> flowers = new ArrayList<>();
 
-        flowers.add(new Flower(rand.nextDouble(priceBound),
-                    rand.nextDouble(lengthBound),
+        flowers.add(new Flower(rand.nextDouble(PRICE_BOUND),
+                    rand.nextDouble(LENGTH_BOUND),
                     FlowerColor.RED, FlowerType.TULIP));
-        flowers.add(new Flower(rand.nextDouble(priceBound),
-                    rand.nextDouble(lengthBound),
+        flowers.add(new Flower(rand.nextDouble(PRICE_BOUND),
+                    rand.nextDouble(LENGTH_BOUND),
                     FlowerColor.RED, FlowerType.TULIP));
-        flowers.add(new Flower(rand.nextDouble(priceBound),
-                    rand.nextDouble(lengthBound),
+        flowers.add(new Flower(rand.nextDouble(PRICE_BOUND),
+                    rand.nextDouble(LENGTH_BOUND),
                     FlowerColor.RED, FlowerType.TULIP));
 
         return flowers;
