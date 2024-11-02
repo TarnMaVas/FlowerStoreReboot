@@ -1,6 +1,5 @@
 package ua.edu.ucu.apps.flower;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.MappedSuperclass;
