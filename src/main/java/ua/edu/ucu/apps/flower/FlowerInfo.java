@@ -1,19 +1,24 @@
 package ua.edu.ucu.apps.flower;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter @NoArgsConstructor @AllArgsConstructor
+@Setter @NoArgsConstructor @AllArgsConstructor @MappedSuperclass
 public abstract class FlowerInfo extends Item {
 
     @Getter
     private double sepalLength;
 
+    @Enumerated(EnumType.STRING)
     private FlowerColor color;
 
-    @Getter
+    @Getter @Enumerated(EnumType.STRING)
     private FlowerType type;
 
     public FlowerInfo(FlowerInfo flowerInfo) {
