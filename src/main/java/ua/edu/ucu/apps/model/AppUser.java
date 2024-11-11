@@ -29,17 +29,17 @@ public class AppUser {
     public AppUser() {
     }
 
-    public AppUser(String email, LocalDate dob) {
-        this.email = email;
-        this.dob = dob;
+    public AppUser(String newEmail, LocalDate newDob) {
+        this.email = newEmail;
+        this.dob = newDob;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long newId) {
+        this.id = newId;
     }
 
     public String getEmail() {
