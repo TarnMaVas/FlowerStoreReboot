@@ -10,9 +10,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "app_user")
+@Getter
+@Setter
 public class AppUser {
 
     @Id
@@ -31,30 +35,6 @@ public class AppUser {
 
     public AppUser(String newEmail, LocalDate newDob) {
         this.email = newEmail;
-        this.dob = newDob;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long newId) {
-        this.id = newId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String newEmail) {
-        this.email = newEmail;
-    }
-
-    public LocalDate getDob() {
-        return dob;
-    }
-
-    public void setDob(LocalDate newDob) {
         this.dob = newDob;
     }
 }
