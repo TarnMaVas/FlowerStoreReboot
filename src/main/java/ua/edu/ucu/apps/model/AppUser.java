@@ -1,7 +1,6 @@
 package ua.edu.ucu.apps.model;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -11,7 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "app_user")
@@ -58,13 +56,5 @@ public class AppUser {
 
     public void setDob(LocalDate dob) {
         this.dob = dob;
-    }
-
-    @Transient
-    public int getAge() {
-        if (dob == null) {
-            return 0;
-        }
-        return Period.between(dob, LocalDate.now()).getYears();
     }
 }

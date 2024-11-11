@@ -16,7 +16,8 @@ public class AppUserService {
     private AppUserRepository appUserRepository;
 
     public AppUser addUser(AppUser appUser) {
-        Optional<AppUser> existingUser = appUserRepository.findUserByEmail(appUser.getEmail());
+        Optional<AppUser> existingUser = appUserRepository
+                            .findUserByEmail(appUser.getEmail());
         if (existingUser.isPresent()) {
             throw new RuntimeException("Invalid email");
         }
