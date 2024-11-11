@@ -46,15 +46,15 @@ public class AppUser {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String newEmail) {
+        this.email = newEmail;
     }
 
     public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+    public void setDob(LocalDate newDob) {
+        this.dob = newDob;
     }
 }
